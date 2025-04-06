@@ -1,0 +1,86 @@
+{
+  "emotional_intelligence": {
+    "id": "emotional_intelligence",
+    "title": "Emotional Intelligence",
+    "description": "Learn to understand and manage your emotions, and develop empathy for others.",
+    "icon": "fa-heart",
+    "color": "#FF6B6B",
+    "age_range": "5-12",
+    "benefits": [
+      "Better relationships with friends and family",
+      "Improved self-confidence",
+      "Ability to handle stress and challenges",
+      "Understanding of others' feelings"
+    ]
+  },
+  "financial_literacy": {
+    "id": "financial_literacy",
+    "title": "Financial Literacy",
+    "description": "Understand how money works, learn about saving, spending wisely, and planning for the future.",
+    "icon": "fa-coins",
+    "color": "#4ECDC4",
+    "age_range": "7-12",
+    "benefits": [
+      "Understanding of basic money concepts",
+      "Smart spending habits",
+      "Saving skills for future goals",
+      "Knowledge of how banking works"
+    ]
+  },
+  "communication_skills": {
+    "id": "communication_skills",
+    "title": "Communication Skills",
+    "description": "Learn to express your thoughts clearly, listen actively, and communicate effectively.",
+    "icon": "fa-comments",
+    "color": "#FFD166",
+    "age_range": "5-12",
+    "benefits": [
+      "Confidence in speaking to others",
+      "Active listening skills",
+      "Clear expression of ideas and feelings",
+      "Better teamwork abilities"
+    ]
+  },
+  "first_aid_safety": {
+    "id": "first_aid_safety",
+    "title": "First Aid & Safety",
+    "description": "Learn important safety skills and basic first aid that could help in emergency situations.",
+    "icon": "fa-first-aid",
+    "color": "#F25F5C",
+    "age_range": "6-12",
+    "benefits": [
+      "Knowledge of basic first aid",
+      "Understanding of emergency procedures",
+      "Home and outdoor safety awareness",
+      "Confidence in helping others safely"
+    ]
+  },
+  "environmental_awareness": {
+    "id": "environmental_awareness",
+    "title": "Environmental Awareness",
+    "description": "Learn about our planet, environmental challenges, and how you can help protect nature.",
+    "icon": "fa-leaf",
+    "color": "#70C1B3",
+    "age_range": "5-12",
+    "benefits": [
+      "Understanding of environmental challenges",
+      "Knowledge of plants and animals",
+      "Recycling and conservation skills",
+      "Appreciation for nature"
+    ]
+  },
+  "physical_activities": {
+    "id": "physical_activities",
+    "title": "Physical Activities",
+    "description": "Discover fun ways to stay active, learn about healthy habits, and improve coordination.",
+    "icon": "fa-running",
+    "color": "#6A60A9",
+    "age_range": "5-12",
+    "benefits": [
+      "Improved physical coordination",
+      "Healthy exercise habits",
+      "Knowledge of different sports and activities",
+      "Understanding the importance of staying active"
+    ]
+  }
+}

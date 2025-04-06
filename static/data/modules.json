@@ -1,0 +1,404 @@
+[
+  {
+    "id": "emotional-intelligence",
+    "title": "Emotional Intelligence",
+    "icon": "fa-heart",
+    "color": "#e74c3c",
+    "description": "Learn to understand and manage emotions in yourself and others.",
+    "age_range": "6-12",
+    "activities": [
+      {
+        "title": "Understanding Emotions",
+        "type": "learning",
+        "content": "Emotions are like signals that tell us how we're feeling inside. Everyone has emotions! Learning to name them is the first step to understanding them.",
+        "instructions": "Look at the emotion faces and try to identify what each one is feeling."
+      },
+      {
+        "title": "Emotion Matching Game",
+        "type": "interactive",
+        "content": "Match the emotion with the correct face and situation.",
+        "instructions": "Drag the emotion word to the matching face."
+      },
+      {
+        "title": "Emotions Quiz",
+        "type": "quiz",
+        "questions": [
+          {
+            "id": 1,
+            "question": "What emotion might you feel when you lose your favorite toy?",
+            "options": [
+              {"id": "a", "text": "Sadness", "correct": true},
+              {"id": "b", "text": "Excitement", "correct": false},
+              {"id": "c", "text": "Pride", "correct": false}
+            ]
+          },
+          {
+            "id": 2,
+            "question": "When might you feel happy?",
+            "options": [
+              {"id": "a", "text": "When you fail a test", "correct": false},
+              {"id": "b", "text": "When you get a birthday present", "correct": true},
+              {"id": "c", "text": "When you're sick", "correct": false}
+            ]
+          },
+          {
+            "id": 3,
+            "question": "What can you do when you feel angry?",
+            "options": [
+              {"id": "a", "text": "Yell at everyone", "correct": false},
+              {"id": "b", "text": "Break something", "correct": false},
+              {"id": "c", "text": "Take deep breaths and count to 10", "correct": true}
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Coping with Strong Emotions",
+        "type": "learning",
+        "content": "Sometimes we feel emotions very strongly. It's okay to feel all emotions, but we need healthy ways to express them.",
+        "instructions": "Learn different strategies for managing strong emotions."
+      },
+      {
+        "title": "Create Your Calm-Down Plan",
+        "type": "interactive",
+        "content": "Make a personal plan for what to do when strong emotions come up.",
+        "instructions": "Choose three strategies you can use when you feel upset or overwhelmed."
+      }
+    ]
+  },
+  {
+    "id": "financial-literacy",
+    "title": "Financial Literacy",
+    "icon": "fa-piggy-bank",
+    "color": "#f39c12",
+    "description": "Learn the basics of money management, saving, and smart spending.",
+    "age_range": "7-12",
+    "activities": [
+      {
+        "title": "What is Money?",
+        "type": "learning",
+        "content": "Money is what we use to buy things we need and want. People earn money by working at jobs.",
+        "instructions": "Look at the different types of currency and learn what they're worth."
+      },
+      {
+        "title": "Needs vs. Wants",
+        "type": "interactive",
+        "content": "Learning to tell the difference between things we need and things we want helps us make smart choices with money.",
+        "instructions": "Sort the items into 'needs' and 'wants' categories."
+      },
+      {
+        "title": "Saving Money",
+        "type": "learning",
+        "content": "Saving means keeping some money for later instead of spending it all now. This helps you buy bigger things in the future.",
+        "instructions": "Learn why saving is important and how to set savings goals."
+      },
+      {
+        "title": "Money Math Challenge",
+        "type": "interactive",
+        "content": "Practice basic money skills by solving simple math problems with dollars and cents.",
+        "instructions": "Solve the money math problems to help the characters make good choices."
+      },
+      {
+        "title": "Financial Literacy Quiz",
+        "type": "quiz",
+        "questions": [
+          {
+            "id": 1,
+            "question": "What is a budget?",
+            "options": [
+              {"id": "a", "text": "A type of wallet", "correct": false},
+              {"id": "b", "text": "A plan for how to use your money", "correct": true},
+              {"id": "c", "text": "A kind of bank account", "correct": false}
+            ]
+          },
+          {
+            "id": 2,
+            "question": "Why is it good to save money?",
+            "options": [
+              {"id": "a", "text": "So you can buy everything you want right now", "correct": false},
+              {"id": "b", "text": "So you never have to spend money", "correct": false},
+              {"id": "c", "text": "So you can buy bigger things later or have money for emergencies", "correct": true}
+            ]
+          },
+          {
+            "id": 3,
+            "question": "If you have $5 and you buy a toy that costs $3, how much money do you have left?",
+            "options": [
+              {"id": "a", "text": "$8", "correct": false},
+              {"id": "b", "text": "$2", "correct": true},
+              {"id": "c", "text": "$5", "correct": false}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "communication-skills",
+    "title": "Communication Skills",
+    "icon": "fa-comments",
+    "color": "#3498db",
+    "description": "Learn how to express yourself clearly and listen to others effectively.",
+    "age_range": "6-12",
+    "activities": [
+      {
+        "title": "What is Communication?",
+        "type": "learning",
+        "content": "Communication is how we share our thoughts, feelings, and ideas with other people. We can communicate with words, our faces, and our bodies.",
+        "instructions": "Explore different types of communication and why they're important."
+      },
+      {
+        "title": "Active Listening Practice",
+        "type": "interactive",
+        "content": "Active listening means really paying attention to what someone is saying, not just waiting for your turn to talk.",
+        "instructions": "Listen to the stories and answer questions about what you heard."
+      },
+      {
+        "title": "Using 'I' Statements",
+        "type": "learning",
+        "content": "'I' statements help us talk about our feelings without blaming others. Instead of saying 'You made me mad,' we can say 'I feel mad when...'",
+        "instructions": "Learn how to turn blame statements into 'I' statements."
+      },
+      {
+        "title": "Body Language Detective",
+        "type": "interactive",
+        "content": "Our faces and bodies can 'talk' even when we don't say words. This is called body language.",
+        "instructions": "Look at the pictures and try to figure out what the person might be feeling."
+      },
+      {
+        "title": "Communication Quiz",
+        "type": "quiz",
+        "questions": [
+          {
+            "id": 1,
+            "question": "What is active listening?",
+            "options": [
+              {"id": "a", "text": "Listening to music while doing homework", "correct": false},
+              {"id": "b", "text": "Paying close attention and showing interest in what someone is saying", "correct": true},
+              {"id": "c", "text": "Waiting for your turn to talk", "correct": false}
+            ]
+          },
+          {
+            "id": 2,
+            "question": "Which is an example of an 'I' statement?",
+            "options": [
+              {"id": "a", "text": "You always interrupt me!", "correct": false},
+              {"id": "b", "text": "I feel frustrated when I'm interrupted.", "correct": true},
+              {"id": "c", "text": "Stop talking over me!", "correct": false}
+            ]
+          },
+          {
+            "id": 3,
+            "question": "Why is body language important?",
+            "options": [
+              {"id": "a", "text": "It's not important at all", "correct": false},
+              {"id": "b", "text": "It can show how we're feeling even without words", "correct": true},
+              {"id": "c", "text": "It's only important when talking to teachers", "correct": false}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "first-aid-safety",
+    "title": "First Aid & Safety",
+    "icon": "fa-first-aid",
+    "color": "#e74c3c",
+    "description": "Learn basic first aid skills and how to stay safe in different situations.",
+    "age_range": "8-12",
+    "activities": [
+      {
+        "title": "Safety Basics",
+        "type": "learning",
+        "content": "Staying safe means knowing how to prevent accidents and what to do if someone gets hurt.",
+        "instructions": "Learn about basic safety rules at home, school, and outdoors."
+      },
+      {
+        "title": "Emergency Contacts",
+        "type": "interactive",
+        "content": "It's important to know who to call in an emergency.",
+        "instructions": "Learn about emergency numbers and create a list of important contacts."
+      },
+      {
+        "title": "Basic First Aid",
+        "type": "learning",
+        "content": "First aid is the help we give to someone who is hurt or sick before a doctor can help them.",
+        "instructions": "Learn about simple first aid techniques for minor injuries."
+      },
+      {
+        "title": "Safety Scenarios",
+        "type": "interactive",
+        "content": "What would you do in these different safety situations?",
+        "instructions": "Choose the best action to take in each safety scenario."
+      },
+      {
+        "title": "First Aid & Safety Quiz",
+        "type": "quiz",
+        "questions": [
+          {
+            "id": 1,
+            "question": "What number should you call in an emergency in the United States?",
+            "options": [
+              {"id": "a", "text": "123", "correct": false},
+              {"id": "b", "text": "911", "correct": true},
+              {"id": "c", "text": "411", "correct": false}
+            ]
+          },
+          {
+            "id": 2,
+            "question": "What should you do for a small cut?",
+            "options": [
+              {"id": "a", "text": "Ignore it", "correct": false},
+              {"id": "b", "text": "Clean it with water and soap, then cover with a bandage", "correct": true},
+              {"id": "c", "text": "Put butter on it", "correct": false}
+            ]
+          },
+          {
+            "id": 3,
+            "question": "What should you do if you see a fire?",
+            "options": [
+              {"id": "a", "text": "Hide under your bed", "correct": false},
+              {"id": "b", "text": "Try to put it out yourself", "correct": false},
+              {"id": "c", "text": "Get out of the building and call for help", "correct": true}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "environmental-awareness",
+    "title": "Environmental Awareness",
+    "icon": "fa-leaf",
+    "color": "#2ecc71",
+    "description": "Learn about nature, environmental protection, and sustainable practices.",
+    "age_range": "6-12",
+    "activities": [
+      {
+        "title": "Our Planet Earth",
+        "type": "learning",
+        "content": "Earth is our home and has important natural resources like water, air, plants, and animals that we need to protect.",
+        "instructions": "Learn about the different environments on Earth and why they're important."
+      },
+      {
+        "title": "Recycling Challenge",
+        "type": "interactive",
+        "content": "Recycling means turning used items into new things instead of throwing them away as trash.",
+        "instructions": "Sort the items into the correct recycling categories."
+      },
+      {
+        "title": "Water Conservation",
+        "type": "learning",
+        "content": "Water is precious, and we need to use it carefully so everyone has enough.",
+        "instructions": "Learn how to save water at home and school."
+      },
+      {
+        "title": "Eco-Detective",
+        "type": "interactive",
+        "content": "Find ways to be more environmentally friendly in everyday situations.",
+        "instructions": "Identify the eco-friendly choices in each scenario."
+      },
+      {
+        "title": "Environmental Quiz",
+        "type": "quiz",
+        "questions": [
+          {
+            "id": 1,
+            "question": "Why is recycling important?",
+            "options": [
+              {"id": "a", "text": "It's not important", "correct": false},
+              {"id": "b", "text": "It helps reduce waste and saves resources", "correct": true},
+              {"id": "c", "text": "It makes our trash cans look colorful", "correct": false}
+            ]
+          },
+          {
+            "id": 2,
+            "question": "Which of these saves water?",
+            "options": [
+              {"id": "a", "text": "Taking a 30-minute shower", "correct": false},
+              {"id": "b", "text": "Turning off the faucet while brushing your teeth", "correct": true},
+              {"id": "c", "text": "Leaving the hose running all day", "correct": false}
+            ]
+          },
+          {
+            "id": 3,
+            "question": "What can you do to help birds and insects in your neighborhood?",
+            "options": [
+              {"id": "a", "text": "Use lots of bug spray", "correct": false},
+              {"id": "b", "text": "Plant flowers that provide food for them", "correct": true},
+              {"id": "c", "text": "Cut down all the trees", "correct": false}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "physical-activities",
+    "title": "Physical Activities",
+    "icon": "fa-running",
+    "color": "#9b59b6",
+    "description": "Learn about staying active, healthy movement, and fun exercises.",
+    "age_range": "6-12",
+    "activities": [
+      {
+        "title": "Why Movement Matters",
+        "type": "learning",
+        "content": "Moving our bodies helps us stay healthy, feel good, and have more energy for the things we love to do.",
+        "instructions": "Learn about the benefits of physical activity and how it helps your body and mind."
+      },
+      {
+        "title": "Fun Fitness Activities",
+        "type": "interactive",
+        "content": "Exercise doesn't have to be boring! There are many fun ways to stay active.",
+        "instructions": "Explore different types of physical activities and find ones you might enjoy."
+      },
+      {
+        "title": "Stretching Basics",
+        "type": "learning",
+        "content": "Stretching helps our muscles stay flexible and prevents injuries.",
+        "instructions": "Learn simple stretches you can do before and after activities."
+      },
+      {
+        "title": "Create a Movement Plan",
+        "type": "interactive",
+        "content": "Planning your physical activities can help you make sure you get enough movement each day.",
+        "instructions": "Build a weekly schedule with different types of physical activities."
+      },
+      {
+        "title": "Physical Activity Quiz",
+        "type": "quiz",
+        "questions": [
+          {
+            "id": 1,
+            "question": "How much physical activity should kids get each day?",
+            "options": [
+              {"id": "a", "text": "None at all", "correct": false},
+              {"id": "b", "text": "At least 60 minutes", "correct": true},
+              {"id": "c", "text": "5 minutes", "correct": false}
+            ]
+          },
+          {
+            "id": 2,
+            "question": "Why is stretching important?",
+            "options": [
+              {"id": "a", "text": "It's not important at all", "correct": false},
+              {"id": "b", "text": "It helps prevent injuries and keeps muscles flexible", "correct": true},
+              {"id": "c", "text": "It makes you taller", "correct": false}
+            ]
+          },
+          {
+            "id": 3,
+            "question": "Which of these activities would help strengthen your heart?",
+            "options": [
+              {"id": "a", "text": "Watching TV", "correct": false},
+              {"id": "b", "text": "Playing video games", "correct": false},
+              {"id": "c", "text": "Jumping rope or running", "correct": true}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

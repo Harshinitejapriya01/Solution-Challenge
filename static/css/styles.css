@@ -1,0 +1,156 @@
+/* Custom styles to enhance Bootstrap theme */
+
+/* Body and general styles */
+body {
+    padding-top: 56px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Card styles for skills and activities */
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top-container {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.activity-card {
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    height: 100%;
+}
+
+.activity-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Progress bars and indicators */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Achievement badges */
+.achievement-badge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+}
+
+/* Interactive elements */
+.interactive-element {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.interactive-element:hover {
+    opacity: 0.8;
+}
+
+.interactive-element:active {
+    transform: scale(0.97);
+}
+
+/* Custom hero section */
+.hero-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--bs-primary-bg-subtle) 0%, var(--bs-info-bg-subtle) 100%);
+    margin-bottom: 2rem;
+}
+
+/* Audio button styles */
+.audio-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+}
+
+/* Age-appropriate styling */
+.kid-friendly-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.kid-friendly-heading {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Activity instructions */
+.instructions-box {
+    background-color: var(--bs-primary-bg-subtle);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Custom animation for engagement */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Difficulty indicators */
+.difficulty-badge {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+}
+
+.difficulty-easy {
+    background-color: var(--bs-success-bg-subtle);
+    color: var(--bs-success);
+}
+
+.difficulty-medium {
+    background-color: var(--bs-warning-bg-subtle);
+    color: var(--bs-warning);
+}
+
+.difficulty-hard {
+    background-color: var(--bs-danger-bg-subtle);
+    color: var(--bs-danger);
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+    padding: 2rem 0;
+}

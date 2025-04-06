@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h1 class="mb-3">Growing Skills for a Bright Future!</h1>
+                    <p class="lead">Learn important life skills beyond what you get in school. Join us on a fun journey to discover emotional intelligence, financial literacy, communication skills, and more!</p>
+                    {% if not session.get('user_id') %}
+                        <div class="mt-4">
+                            <button class="btn btn-light btn-lg me-3" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                <i class="fas fa-user-plus me-2"></i>Join Now
+                            </button>
+                            <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-sign-in-alt me-2"></i>Login
+                            </button>
+                        </div>
+                    {% else %}
+                        <div class="mt-4">
+                            <a href="{{ url_for('profile') }}" class="btn btn-light btn-lg">
+                                <i class="fas fa-chart-line me-2"></i>My Progress
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-5 text-center">
+                    <div class="hero-mascot">
+                        <!-- SVG Mascot -->
+                        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Simple SVG character - a friendly owl mascot -->
+                            <circle cx="100" cy="100" r="80" fill="#9b59b6" />
+                            <circle cx="70" cy="80" r="20" fill="white" />
+                            <circle cx="130" cy="80" r="20" fill="white" />
+                            <circle cx="70" cy="80" r="10" fill="#333" />
+                            <circle cx="130" cy="80" r="10" fill="#333" />
+                            <ellipse cx="100" cy="120" rx="30" ry="20" fill="#f39c12" />
+                            <path d="M70 160 Q100 180 130 160" stroke="#fff" stroke-width="5" fill="none" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Explore Life Skills</h2>
+        <p class="text-center mb-5">Choose a skill area to start learning and growing!</p>
+        
+        <div class="row g-4">
+            {% for module in modules %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card module-card h-100" style="border-top: 4px solid {{ module.color }};">
+                        <div class="card-body text-center">
+                            <i class="fas {{ module.icon }} card-icon" style="color: {{ module.color }};"></i>
+                            <h3 class="card-title h5">{{ module.title }}</h3>
+                            <p class="card-text">{{ module.description }}</p>
+                            <span class="badge rounded-pill" style="background-color: {{ module.color }};">
+                                Ages {{ module.age_range }}
+                            </span>
+                            <div class="mt-3">
+                                <a href="{{ url_for('module', module_id=module.id) }}" class="btn btn-outline-primary">
+                                    Start Learning
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container my-5">
+        <div class="row g-4 py-4">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <i class="fas fa-brain fa-3x mb-3" style="color: #9b59b6;"></i>
+                    <h3 class="h4">Learn by Doing</h3>
+                    <p>Interactive activities make learning fun and effective.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <i class="fas fa-award fa-3x mb-3" style="color: #f39c12;"></i>
+                    <h3 class="h4">Earn Achievements</h3>
+                    <p>Get recognized for your progress and skills mastery.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3" style="color: #2ecc71;"></i>
+                    <h3 class="h4">Track Progress</h3>
+                    <p>See how you're growing in each skill area.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">What Kids Are Saying</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"I learned how to save money for the toy I really wanted! Now I understand why my parents talk about budgets."</p>
+                        <p class="card-text"><small class="text-muted">- Jamie, age 9</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"The emotion games helped me understand why I feel certain ways sometimes. I'm better at talking about my feelings now."</p>
+                        <p class="card-text"><small class="text-muted">- Taylor, age 8</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p class="card-text">"I showed my little brother how to do first aid for a scraped knee. He said I was like a doctor!"</p>
+                        <p class="card-text"><small class="text-muted">- Alex, age 11</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="container my-5">
+        <div class="card bg-primary text-white">
+            <div class="card-body p-5 text-center">
+                <h2>Ready to Start Learning?</h2>
+                <p class="lead">Join thousands of kids building essential life skills for a bright future.</p>
+                {% if not session.get('user_id') %}
+                    <button class="btn btn-light btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        <i class="fas fa-rocket me-2"></i>Start Your Journey
+                    </button>
+                {% else %}
+                    <a href="{{ url_for('profile') }}" class="btn btn-light btn-lg mt-3">
+                        <i class="fas fa-rocket me-2"></i>Continue Your Journey
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

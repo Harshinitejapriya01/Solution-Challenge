@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container my-4">
+    <!-- Profile Header -->
+    <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+            <h1>{{ user.username }}'s Learning Journey</h1>
+            <p class="lead">Track your progress and achievements in life skills</p>
+        </div>
+        <div class="col-md-4 text-end">
+            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px">
+                <i class="fas fa-user fa-3x"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Progress Overview -->
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="h4 mb-0">Your Overall Progress</h2>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="flex-grow-1 me-3">
+                            <div class="progress" style="height: 30px;">
+                                <div class="progress-bar progress-bar-animated" role="progressbar" 
+                                     style="width: {{ overall_progress }}%;" 
+                                     aria-valuenow="{{ overall_progress }}" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="100">
+                                    {{ overall_progress }}%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center" style="min-width: 100px;">
+                            <span class="display-6">{{ overall_progress }}%</span>
+                            <div class="text-muted">Complete</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-5">
+                            <h5>Skill Areas</h5>
+                            <ul class="list-group">
+                                {% for module in module_progress %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center module-progress-item" 
+                                    data-module-name="{{ module.title }}"
+                                    data-progress="{{ module.progress }}">
+                                    {{ module.title }}
+                                    <span class="badge bg-primary rounded-pill">{{ module.progress }}%</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-md-7">
+                            <canvas id="progressChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Achievements Section -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="h4 mb-0">Your Achievements</h2>
+                </div>
+                <div class="card-body" id="achievementsContainer">
+                    {% if achievements %}
+                        <div class="row">
+                            {% for achievement in achievements %}
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100 achievement-item border-warning">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-trophy text-warning fa-3x mb-3"></i>
+                                        <h5 class="card-title">{{ achievement.achievement_name }}</h5>
+                                        <p class="card-text">{{ achievement.achievement_description }}</p>
+                                        <small class="text-muted">Earned on {{ achievement.date_earned.strftime('%b %d, %Y') }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center p-4">
+                            <i class="fas fa-award fa-3x text-muted mb-3"></i>
+                            <p>Complete modules to earn achievements!</p>
+                            <a href="{{ url_for('index') }}" class="btn btn-primary">Start Learning</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Continue Learning Section -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="h4 mb-0">Continue Learning</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        {% for module in module_progress %}
+                            {% if module.progress < 100 %}
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ module.title }}</h5>
+                                            <div class="progress mb-3">
+                                                <div class="progress-bar progress-bar-animated" role="progressbar" 
+                                                     style="width: {{ module.progress }}%;" 
+                                                     data-progress="{{ module.progress }}"
+                                                     aria-valuenow="{{ module.progress }}" 
+                                                     aria-valuemin="0" 
+                                                     aria-valuemax="100">
+                                                    {{ module.progress }}%
+                                                </div>
+                                            </div>
+                                            <a href="{{ url_for('module', module_id=module.id) }}" class="btn btn-outline-primary">Continue</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if module_progress|selectattr('progress', 'lt', 100)|list|length == 0 %}
+                            <div class="col-12 text-center p-4">
+                                <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                                <h5>Amazing Job!</h5>
+                                <p>You've completed all available modules. Check back soon for new content!</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Preferences Section -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="h4 mb-0">Your Preferences</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="themeSelector" class="form-label">App Theme</label>
+                                <select id="themeSelector" class="form-select">
+                                    <option value="default">Default</option>
+                                    <option value="ocean">Ocean</option>
+                                    <option value="forest">Forest</option>
+                                    <option value="sunset">Sunset</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Audio Instructions</label>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="audioToggle" checked>
+                                    <label class="form-check-label" for="audioToggle">Enable audio instructions</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/progress.js') }}"></script>
+{% endblock %}

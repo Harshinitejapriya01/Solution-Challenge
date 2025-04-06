@@ -1,0 +1,179 @@
+{
+  "emotion_recognition": {
+    "id": "emotion_recognition",
+    "skill_id": "emotional_intelligence",
+    "title": "Emotion Recognition Game",
+    "description": "Match facial expressions with the correct emotions to improve your emotional awareness.",
+    "instructions": "Look at each face and select the emotion you think they are feeling. Try to get as many correct as possible!",
+    "difficulty": "easy",
+    "duration": "5-10 minutes",
+    "type": "interactive",
+    "content": {
+      "emotions": ["happy", "sad", "angry", "surprised", "scared", "confused"]
+    }
+  },
+  "emotion_scenarios": {
+    "id": "emotion_scenarios",
+    "skill_id": "emotional_intelligence",
+    "title": "What Would You Feel?",
+    "description": "Learn about different emotional responses to everyday situations.",
+    "instructions": "Read each scenario and identify how you might feel. Then think about how others might feel in the same situation.",
+    "difficulty": "medium",
+    "duration": "10-15 minutes",
+    "type": "interactive",
+    "content": {
+      "scenarios": [
+        "Your friend doesn't invite you to their birthday party.",
+        "You get a perfect score on a difficult test.",
+        "Someone accidentally breaks your favorite toy.",
+        "You help a younger child who is lost find their parent."
+      ]
+    }
+  },
+  "saving_game": {
+    "id": "saving_game",
+    "skill_id": "financial_literacy",
+    "title": "Savings Challenge",
+    "description": "Learn how to save money for things you want by making smart choices.",
+    "instructions": "You'll start with a virtual allowance. Make decisions about spending and saving to reach your savings goal!",
+    "difficulty": "medium",
+    "duration": "10-15 minutes",
+    "type": "game",
+    "content": {
+      "starting_amount": 10,
+      "goal": 50,
+      "weeks": 10,
+      "choices_per_week": 3
+    }
+  },
+  "budget_basics": {
+    "id": "budget_basics",
+    "skill_id": "financial_literacy",
+    "title": "Budget Basics",
+    "description": "Learn how to create a simple budget to manage your money.",
+    "instructions": "Follow the guided activity to create your first budget. Decide how much to save, spend, and share.",
+    "difficulty": "medium",
+    "duration": "15 minutes",
+    "type": "interactive",
+    "content": {
+      "categories": ["Save", "Spend", "Share"],
+      "allowance": 10
+    }
+  },
+  "storytelling": {
+    "id": "storytelling",
+    "skill_id": "communication_skills",
+    "title": "Creative Storytelling",
+    "description": "Develop your speaking skills by creating and sharing stories.",
+    "instructions": "Use the story prompts to create your own short story. Practice telling it clearly and with expression.",
+    "difficulty": "medium",
+    "duration": "15-20 minutes",
+    "type": "creative",
+    "content": {
+      "prompts": [
+        "A lost puppy finds a magical friend",
+        "An adventure in a mysterious forest",
+        "Finding a secret message in a library book",
+        "Making friends with someone from another country"
+      ]
+    }
+  },
+  "active_listening": {
+    "id": "active_listening",
+    "skill_id": "communication_skills",
+    "title": "Active Listening Skills",
+    "description": "Learn how to be a great listener and why it matters.",
+    "instructions": "Watch the short video about active listening, then practice with the listening challenge.",
+    "difficulty": "easy",
+    "duration": "10 minutes",
+    "type": "video_interactive",
+    "content": {
+      "steps": ["Make eye contact", "Don't interrupt", "Ask questions", "Repeat back what you heard"]
+    }
+  },
+  "home_safety": {
+    "id": "home_safety",
+    "skill_id": "first_aid_safety",
+    "title": "Home Safety Explorer",
+    "description": "Learn to identify and prevent common safety hazards at home.",
+    "instructions": "Explore the virtual house and spot potential safety hazards. Tap on each hazard to learn how to make it safe.",
+    "difficulty": "easy",
+    "duration": "10 minutes",
+    "type": "interactive",
+    "content": {
+      "rooms": ["kitchen", "bathroom", "bedroom", "living room"],
+      "hazards_per_room": 3
+    }
+  },
+  "emergency_calls": {
+    "id": "emergency_calls",
+    "skill_id": "first_aid_safety",
+    "title": "Emergency Call Practice",
+    "description": "Learn when and how to call for help in an emergency.",
+    "instructions": "Practice what to say when calling emergency services. Remember to stay calm and provide clear information.",
+    "difficulty": "medium",
+    "duration": "10 minutes",
+    "type": "simulation",
+    "content": {
+      "emergency_number": "911 (or your local emergency number)",
+      "key_information": ["Your name", "What happened", "Where you are", "If anyone is hurt"]
+    }
+  },
+  "recycling_sort": {
+    "id": "recycling_sort",
+    "skill_id": "environmental_awareness",
+    "title": "Recycling Sorter",
+    "description": "Learn which items can be recycled and how to sort them correctly.",
+    "instructions": "Sort the different items into the correct bins: recycling, compost, or trash.",
+    "difficulty": "easy",
+    "duration": "5-10 minutes",
+    "type": "game",
+    "content": {
+      "bins": ["Recycling", "Compost", "Trash"],
+      "items": 15
+    }
+  },
+  "water_conservation": {
+    "id": "water_conservation",
+    "skill_id": "environmental_awareness",
+    "title": "Water Saver Challenge",
+    "description": "Discover ways to save water and why it's important for our planet.",
+    "instructions": "Complete the interactive quiz to learn about water conservation. Then create your own water-saving plan.",
+    "difficulty": "medium",
+    "duration": "15 minutes",
+    "type": "quiz_activity",
+    "content": {
+      "quiz_questions": 5,
+      "water_facts": 3,
+      "conservation_tips": 5
+    }
+  },
+  "yoga_basics": {
+    "id": "yoga_basics",
+    "skill_id": "physical_activities",
+    "title": "Kid's Yoga Basics",
+    "description": "Learn simple yoga poses that improve strength, balance, and flexibility.",
+    "instructions": "Follow along with the animated demonstrations to try each yoga pose. Hold each pose for 10-15 seconds.",
+    "difficulty": "easy",
+    "duration": "10 minutes",
+    "type": "exercise",
+    "content": {
+      "poses": ["Mountain Pose", "Tree Pose", "Downward Dog", "Cobra", "Child's Pose"],
+      "benefits": ["Improves balance", "Builds strength", "Increases flexibility", "Helps concentration"]
+    }
+  },
+  "dance_party": {
+    "id": "dance_party",
+    "skill_id": "physical_activities",
+    "title": "Dance Party Workout",
+    "description": "Get moving with fun dance moves that improve coordination and fitness.",
+    "instructions": "Follow the animated dance moves on screen. Try to keep up and have fun moving to the beat!",
+    "difficulty": "medium",
+    "duration": "10-15 minutes",
+    "type": "exercise",
+    "content": {
+      "moves": ["Jumping jacks", "Side steps", "Arm waves", "Marching", "Twists"],
+      "music_tempo": "medium"
+    }
+  }
+}

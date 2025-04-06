@@ -1,0 +1,354 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container my-4 module-container" data-module-id="{{ module.id }}">
+    <!-- Module Header -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1>{{ module.title }}</h1>
+            <p class="lead">{{ module.description }}</p>
+            <div class="d-flex align-items-center">
+                <span class="badge rounded-pill me-2" style="background-color: {{ module.color }};">
+                    Ages {{ module.age_range }}
+                </span>
+                
+                <button class="play-audio-instructions" data-instructions="Welcome to the {{ module.title }} module. This module will help you learn about {{ module.description }} Click on Next to start your learning journey.">
+                    <i class="fas fa-volume-up"></i> Listen
+                </button>
+            </div>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+            <i class="fas {{ module.icon }} fa-4x" style="color: {{ module.color }};"></i>
+        </div>
+    </div>
+    
+    <!-- Progress bar -->
+    <div class="progress mb-4">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
+             role="progressbar" 
+             aria-valuenow="0" 
+             aria-valuemin="0" 
+             aria-valuemax="100">0%</div>
+    </div>
+    
+    <!-- Activity steps - will be shown/hidden via JavaScript -->
+    {% for activity in module.activities %}
+        <div class="activity-step d-none" data-step="{{ loop.index0 }}">
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h2 class="h4 mb-0">{{ activity.title }}</h2>
+                    
+                    <button class="play-audio-instructions btn btn-sm btn-outline-primary" 
+                            data-instructions="{{ activity.instructions }}">
+                        <i class="fas fa-volume-up"></i> Listen to Instructions
+                    </button>
+                </div>
+                <div class="card-body">
+                    <p>{{ activity.content }}</p>
+                    
+                    {% if activity.type == 'learning' %}
+                        <div class="learning-content">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <p>{{ activity.instructions }}</p>
+                                    
+                                    {% if activity.title == "Understanding Emotions" %}
+                                        <div class="row g-3 text-center">
+                                            <div class="col-4">
+                                                <div class="card h-100">
+                                                    <div class="card-body">
+                                                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                                                            <circle cx="50" cy="50" r="45" fill="#FFDB58" />
+                                                            <circle cx="35" cy="40" r="5" fill="#000" />
+                                                            <circle cx="65" cy="40" r="5" fill="#000" />
+                                                            <path d="M 30 65 Q 50 80 70 65" stroke="#000" stroke-width="3" fill="none" />
+                                                        </svg>
+                                                        <h5 class="mt-2">Happy</h5>
+                                                        <p class="small">When you feel good inside</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="card h-100">
+                                                    <div class="card-body">
+                                                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                                                            <circle cx="50" cy="50" r="45" fill="#FFDB58" />
+                                                            <circle cx="35" cy="40" r="5" fill="#000" />
+                                                            <circle cx="65" cy="40" r="5" fill="#000" />
+                                                            <path d="M 30 75 Q 50 60 70 75" stroke="#000" stroke-width="3" fill="none" />
+                                                        </svg>
+                                                        <h5 class="mt-2">Sad</h5>
+                                                        <p class="small">When you feel down or blue</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="card h-100">
+                                                    <div class="card-body">
+                                                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                                                            <circle cx="50" cy="50" r="45" fill="#FFDB58" />
+                                                            <circle cx="35" cy="40" r="5" fill="#000" />
+                                                            <circle cx="65" cy="40" r="5" fill="#000" />
+                                                            <path d="M 30 70 L 70 70" stroke="#000" stroke-width="3" fill="none" />
+                                                            <line x1="25" y1="30" x2="40" y2="35" stroke="#000" stroke-width="3" />
+                                                            <line x1="75" y1="30" x2="60" y2="35" stroke="#000" stroke-width="3" />
+                                                        </svg>
+                                                        <h5 class="mt-2">Angry</h5>
+                                                        <p class="small">When you feel upset or mad</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% elif activity.title == "What is Money?" %}
+                                        <div class="row g-3 text-center">
+                                            <div class="col-md-6">
+                                                <div class="card h-100">
+                                                    <div class="card-body">
+                                                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                                                            <circle cx="50" cy="50" r="45" fill="#85bb65" />
+                                                            <text x="50" y="65" text-anchor="middle" font-size="30" fill="white">$</text>
+                                                        </svg>
+                                                        <h5 class="mt-2">Dollars</h5>
+                                                        <p class="small">Used to buy goods and services</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card h-100">
+                                                    <div class="card-body">
+                                                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                                                            <circle cx="50" cy="50" r="45" fill="#b87333" />
+                                                            <text x="50" y="65" text-anchor="middle" font-size="30" fill="white">¢</text>
+                                                        </svg>
+                                                        <h5 class="mt-2">Cents</h5>
+                                                        <p class="small">100 cents = 1 dollar</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h4 class="h5">Did You Know?</h4>
+                                            {% if activity.title == "Understanding Emotions" %}
+                                                <p>People all around the world experience the same basic emotions, no matter where they live or what language they speak!</p>
+                                            {% elif activity.title == "What is Money?" %}
+                                                <p>Different countries use different types of money called currencies. In the United States, we use dollars and cents.</p>
+                                            {% elif activity.title == "What is Communication?" %}
+                                                <p>Over 90% of communication is non-verbal! That means your face and body language say more than your words.</p>
+                                            {% elif activity.title == "Safety Basics" %}
+                                                <p>Knowing basic safety rules can prevent many common accidents and injuries.</p>
+                                            {% elif activity.title == "Our Planet Earth" %}
+                                                <p>Earth is the only planet in our solar system that has liquid water on its surface, which makes life possible!</p>
+                                            {% elif activity.title == "Why Movement Matters" %}
+                                                <p>Regular physical activity can help you focus better in school and get better sleep at night!</p>
+                                            {% else %}
+                                                <p>Learning new skills helps your brain grow stronger and makes new connections between brain cells.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% elif activity.type == 'interactive' %}
+                        <div class="interactive-activity">
+                            <p class="mb-4">{{ activity.instructions }}</p>
+                            
+                            {% if activity.title == "Emotion Matching Game" %}
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <h5>Drag these emotions</h5>
+                                        <div class="draggable" id="emotion-happy">Happy</div>
+                                        <div class="draggable" id="emotion-sad">Sad</div>
+                                        <div class="draggable" id="emotion-angry">Angry</div>
+                                        <div class="draggable" id="emotion-scared">Scared</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>To the matching situation</h5>
+                                        <div class="drop-zone" data-correct-item="emotion-happy">When you get a new toy</div>
+                                        <div class="drop-zone" data-correct-item="emotion-sad">When your ice cream falls on the ground</div>
+                                        <div class="drop-zone" data-correct-item="emotion-angry">When someone breaks your toy</div>
+                                        <div class="drop-zone" data-correct-item="emotion-scared">When you hear a loud noise at night</div>
+                                    </div>
+                                </div>
+                            {% elif activity.title == "Needs vs. Wants" %}
+                                <div class="row mb-4 text-center">
+                                    <div class="col-md-6">
+                                        <h5>Needs</h5>
+                                        <div class="drop-zone" data-correct-item="item-water">Drop needs here</div>
+                                        <div class="drop-zone" data-correct-item="item-food">Drop needs here</div>
+                                        <div class="drop-zone" data-correct-item="item-home">Drop needs here</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Wants</h5>
+                                        <div class="drop-zone" data-correct-item="item-toy">Drop wants here</div>
+                                        <div class="drop-zone" data-correct-item="item-candy">Drop wants here</div>
+                                        <div class="drop-zone" data-correct-item="item-game">Drop wants here</div>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-12 d-flex flex-wrap justify-content-center">
+                                        <div class="draggable m-2" id="item-water">Water</div>
+                                        <div class="draggable m-2" id="item-toy">Toy Robot</div>
+                                        <div class="draggable m-2" id="item-food">Healthy Food</div>
+                                        <div class="draggable m-2" id="item-candy">Candy</div>
+                                        <div class="draggable m-2" id="item-home">Shelter/Home</div>
+                                        <div class="draggable m-2" id="item-game">Video Game</div>
+                                    </div>
+                                </div>
+                            {% elif activity.title == "Create Your Calm-Down Plan" %}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>My Calm-Down Plan</h5>
+                                        <p>Choose three strategies that can help you when you're feeling upset:</p>
+                                        
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="strategy1">
+                                                <label class="form-check-label" for="strategy1">
+                                                    Take 5 deep breaths
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="strategy2">
+                                                <label class="form-check-label" for="strategy2">
+                                                    Count slowly to 10
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="strategy3">
+                                                <label class="form-check-label" for="strategy3">
+                                                    Talk to a trusted adult
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="strategy4">
+                                                <label class="form-check-label" for="strategy4">
+                                                    Draw my feelings
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="strategy5">
+                                                <label class="form-check-label" for="strategy5">
+                                                    Go to a quiet place
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="strategy6">
+                                                <label class="form-check-label" for="strategy6">
+                                                    Squeeze a stress ball
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="btn btn-primary" id="saveCalmPlan">Save My Plan</button>
+                                        <div id="calmPlanResult" class="mt-3 d-none"></div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% elif activity.type == 'quiz' %}
+                        <div class="quiz-activity" data-quiz-id="{{ loop.index }}" data-requires-completion="true">
+                            <form class="quiz-form" data-quiz-id="{{ loop.index }}">
+                                {% for question in activity.questions %}
+                                    <div class="card mb-3 quiz-question" data-question-id="{{ question.id }}">
+                                        <div class="card-header d-flex justify-content-between">
+                                            <span>Question {{ loop.index }} of {{ activity.questions|length }}</span>
+                                            <span class="question-result d-none"></span>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ question.question }}</h5>
+                                            
+                                            {% for option in question.options %}
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="q{{ question.id }}" id="q{{ question.id }}{{ option.id }}" data-correct="{{ option.correct|lower }}">
+                                                    <label class="form-check-label" for="q{{ question.id }}{{ option.id }}">
+                                                        {{ option.text }}
+                                                    </label>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-check-circle me-1"></i>Check Your Answers
+                                </button>
+                            </form>
+                            
+                            <div id="quiz{{ loop.index }}Result" class="mt-4 d-none"></div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
+    <!-- Navigation buttons -->
+    <div class="activity-nav">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <button id="prevStep" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left me-1"></i>Previous
+                </button>
+                <button id="nextStep" class="btn btn-primary">
+                    Next<i class="fas fa-arrow-right ms-1"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Module Completion Modal -->
+    <div class="modal fade" id="moduleCompletionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-trophy text-warning me-2"></i>
+                        Congratulations!
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="80" width="100" height="120" fill="#f39c12" />
+                        <polygon points="50,80 100,30 150,80" fill="#e74c3c" />
+                        <rect x="80" y="120" width="40" height="80" fill="#3498db" />
+                        <circle cx="90" cy="160" r="5" fill="#000" />
+                    </svg>
+                    <h4 class="mt-3">You've completed the {{ module.title }} module!</h4>
+                    <p>You've learned valuable skills that will help you in life. Keep up the good work!</p>
+                    
+                    {% if session.get('user_id') %}
+                        <p><small>Your progress has been saved to your profile.</small></p>
+                    {% else %}
+                        <div class="alert alert-warning">
+                            <p><strong>Want to save your progress?</strong></p>
+                            <p>Create a free account to track your achievements!</p>
+                            <button class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                Create Account
+                            </button>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url_for('index') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-home me-1"></i>Go to Home Page
+                    </a>
+                    {% if session.get('user_id') %}
+                        <a href="{{ url_for('profile') }}" class="btn btn-primary">
+                            <i class="fas fa-chart-line me-1"></i>View My Progress
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/modules.js') }}"></script>
+{% endblock %}
