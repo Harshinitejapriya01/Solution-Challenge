@@ -14,7 +14,9 @@ db = SQLAlchemy(model_class=Base)
 
 # Create the app
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET")
+app.config['SECRET_KEY'] = 'your_secret_key_here'
+
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "fallback_secret_key")
 
 # Configure the SQLite database
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///skill_grow.db"
